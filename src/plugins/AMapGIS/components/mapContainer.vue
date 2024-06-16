@@ -16,22 +16,22 @@ import { onMounted } from "vue"
 import { useMapStore } from '../stores/mapStore'
 
 const props = withDefaults(defineProps<{
-	center?: Array<Number>
-	zoom?: Number
-	pitch?: Number
-	mapStyle?: String
+	center?: Array<number>
+	zoom?: number
+	pitch?: number
+	mapStyle?: string
 }>(), {
 	center: [0, 0],
-	zoom: 14,
+	zoom: 20,
 	pitch: 50,
-	mapStyle: 'normal',
+	mapStyle: 'grey',
 })
 
 const mapStore = useMapStore()
 let map = null
 onMounted(async () => {
 	await AMapLoader.load({
-		key: "0c7222955570f1b434c4adfcc1e955e8", //可自行修改成自己得高德API key
+		key: "af40b0d20d531addd43858ce69bf3ece", //可自行修改成自己得高德API key
 		version: "2.0",
 	})
 		.then((_AMap) => {
@@ -41,7 +41,7 @@ onMounted(async () => {
 				viewMode: '3D',
 				zoom: props.zoom,
 				pitch: props.pitch,
-				mapStyle: 'amap://styles/'+props.mapStyle,
+				mapStyle: 'amap://styles/' + props.mapStyle,
 			})
 			map.on('click', (e) => {
 				const text = `您在 [ ${e.lnglat.getLng()},${e.lnglat.getLat()} ] 的位置单击了地图！`

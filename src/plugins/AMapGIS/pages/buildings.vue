@@ -7,7 +7,7 @@
  * @LastEditTime: 2024-03-22 07:42:01
 -->
 <template>
-	<mapContainer :center="mapCenter" :zoom="19" :pitch="65.59312320916906" mapStyle="darkblue" />
+	<mapContainer :center="mapCenter" :pitch="50"/>
 	<TresCanvas id="tresCanvas" ref="tcRef" v-bind="state">
 		<TresPerspectiveCamera :fov="60" :near="0.1" :far="2000" />
 		<TresAmbientLight :intensity="0.5" />
@@ -28,7 +28,7 @@ import mergeTres from "../components/mergeTres.vue"
 
 import buildingModels from '../components/buildingModels.vue'
 
-const mapCenter = [121.407867, 31.157717]
+const mapCenter = [121.436027,38.878785]
 
 const state = reactive({
 	// windowSize: true,
