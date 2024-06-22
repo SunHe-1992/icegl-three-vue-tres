@@ -24,7 +24,7 @@ const props = withDefaults(defineProps<{
 	center: [0, 0],
 	zoom: 20,
 	pitch: 50,
-	mapStyle: 'grey',
+	mapStyle: 'normal',
 })
 
 const mapStore = useMapStore()
